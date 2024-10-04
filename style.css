@@ -36,3 +36,34 @@ button{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     padding: 10px;
 }
+#grid{
+    display: flex;
+    flex-wrap: wrap;
+    /* max-width: 120px; */
+}
+#gridC{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* max-height: 120px; */
+}
+.row{
+    min-width: 10px;
+    min-height: 10px;
+    max-width: 10px;
+    max-height: 10px;
+    background-color: white;
+    box-sizing: border-box;
+    border: solid, 1px;
+}
+.column{
+    min-width: 10px;       
+    min-height: 10px;
+    max-width: 10px;
+    max-height: 10px;
+    background-color: white;
+    box-sizing: border-box;
+    border: solid, 1px;
+}
+
+
