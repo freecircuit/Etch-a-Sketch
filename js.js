@@ -2,8 +2,21 @@ let header = document.getElementById("header");
 header.innerHTML = "<span>Etch-a-Sketch!</span>"
 let text = document.querySelector("span")
 text.style.cssText = "margin: auto"
-let grid = document .querySelector("#grid");
-let gridC = document .querySelector("#gridC");
+const contain = document.querySelector("gridContain")
+let grid = document.querySelector("#grid");
+let gridC = document.querySelector("#gridC");
+let play = document.querySelector("#play");
+let row = document.querySelector(".row")
+let column = document.querySelector(".column")
+
+play.addEventListener("click", (e) => {
+    grid.querySelectorAll(".row").forEach(div => div.remove());
+    gridC.querySelectorAll(".column").forEach(div => div.remove());
+    let size = getSize();
+    theGrid(size);
+    play.textContent = "Reset";
+
+});
 
 
 
@@ -13,7 +26,16 @@ function theGrid(n){
     for(i=0; i < n; i++){
     for(j = 0; j < n; j++){
     gridC.innerHTML += '<div class="column"></div>';}
-grid.innerHTML += '<div class="row"></div>';
+    grid.innerHTML += '<div class="row"></div>';
 }}
 
-theGrid(20);
+
+function getSize(){
+    let n = prompt("Please enter number between 1 & 50 for size of sketch pad:");
+    var size = parseInt(n);
+    if (size < 1 ||
+            size > 50){
+            getSize()
+        }
+        return size
+}
