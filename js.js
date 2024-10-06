@@ -49,12 +49,17 @@ grid.appendChild(div);
 
 function getSize(){
     let n = prompt("Please enter number between 1 & 100 for size of sketch pad:");
+    let num = Number(n)
+    if(Number.isNaN(num)){
+        getSize()}
+    else{
     var size = parseInt(n);
     if (size < 1 ||
         size > 100){
             getSize()
         }
-        return size
+    
+        return size}
 }
 
 function color(e){
